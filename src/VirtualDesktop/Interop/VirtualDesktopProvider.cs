@@ -17,6 +17,11 @@ internal abstract class VirtualDesktopProvider
 
     public abstract IVirtualDesktopManagerInternal VirtualDesktopManagerInternal { get; }
 
+    public virtual IVirtualDesktopManagerInternal2 VirtualDesktopManagerInternal2 
+    { 
+        get => throw new NotImplementedException();
+    }
+
     public abstract IVirtualDesktopPinnedApps VirtualDesktopPinnedApps { get; }
 
     public abstract IVirtualDesktopNotificationService VirtualDesktopNotificationService { get; }

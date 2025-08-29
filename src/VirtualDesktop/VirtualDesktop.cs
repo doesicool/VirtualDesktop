@@ -31,7 +31,18 @@ public partial class VirtualDesktop
         get => this._name;
         set
         {
-            _provider.VirtualDesktopManagerInternal.SetDesktopName(this._source, value);
+            //_provider.VirtualDesktopManagerInternal.SetDesktopName(this._source, value);
+
+            try
+            {
+                _provider.VirtualDesktopManagerInternal2.SetName(this._source, value);
+                //  Exception of type 'System.ExecutionEngineException' was thrown.
+            }
+            catch (Exception ex)
+            {
+                Debugger.Break();
+            }
+
             this._name = value;
         }
     }

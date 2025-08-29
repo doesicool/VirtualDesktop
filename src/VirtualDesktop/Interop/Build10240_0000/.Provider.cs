@@ -11,6 +11,7 @@ internal class VirtualDesktopProvider10240 : VirtualDesktopProvider
     private IVirtualDesktopManager? _virtualDesktopManager;
     private ApplicationViewCollection? _applicationViewCollection;
     private VirtualDesktopManagerInternal? _virtualDesktopManagerInternal;
+    private VirtualDesktopManagerInternal2? _virtualDesktopManagerInternal2;
     private VirtualDesktopPinnedApps? _virtualDesktopPinnedApps;
     private VirtualDesktopNotificationService? _virtualDesktopNotificationService;
 
@@ -22,6 +23,9 @@ internal class VirtualDesktopProvider10240 : VirtualDesktopProvider
 
     public override IVirtualDesktopManagerInternal VirtualDesktopManagerInternal
         => this._virtualDesktopManagerInternal ?? throw InitializationIsRequired;
+
+    public override IVirtualDesktopManagerInternal2 VirtualDesktopManagerInternal2
+    => this._virtualDesktopManagerInternal2 ?? throw InitializationIsRequired;
 
     public override IVirtualDesktopPinnedApps VirtualDesktopPinnedApps
         => this._virtualDesktopPinnedApps ?? throw InitializationIsRequired;
@@ -43,6 +47,7 @@ internal class VirtualDesktopProvider10240 : VirtualDesktopProvider
             x => this._applicationViewCollection.GetViewForHwnd(x),
             x => new VirtualDesktop(assembly, x));
         this._virtualDesktopManagerInternal = new VirtualDesktopManagerInternal(assembly, factory);
+        this._virtualDesktopManagerInternal2 = new VirtualDesktopManagerInternal2(assembly, factory);
         this._virtualDesktopPinnedApps = new VirtualDesktopPinnedApps(assembly, factory);
         this._virtualDesktopNotificationService = new VirtualDesktopNotificationService(assembly, factory);
     }

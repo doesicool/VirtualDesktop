@@ -62,6 +62,7 @@
     <EmbeddedResource Include="Interop\Build10240_0000\.interfaces\IApplicationViewCollection.cs" />
     <EmbeddedResource Include="Interop\Build10240_0000\.interfaces\IVirtualDesktop.cs" />
     <EmbeddedResource Include="Interop\Build10240_0000\.interfaces\IVirtualDesktopManagerInternal.cs" />
+		<EmbeddedResource Include="Interop\Build10240_0000\.interfaces\IVirtualDesktopManagerInternal2.cs" />
     <EmbeddedResource Include="Interop\Build10240_0000\.interfaces\IVirtualDesktopNotification.cs" />
     <EmbeddedResource Include="Interop\Build10240_0000\.interfaces\IVirtualDesktopNotificationService.cs" />
     <EmbeddedResource Include="Interop\Build10240_0000\.interfaces\IVirtualDesktopPinnedApps.cs" />
