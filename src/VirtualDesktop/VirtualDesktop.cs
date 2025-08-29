@@ -37,6 +37,14 @@ public partial class VirtualDesktop
     }
 
     /// <summary>
+    /// Gets the index of this desktop.
+    /// </summary> 
+    public int GetIndex()
+    {
+        return GetIndexFromId(this.Id);
+    }
+
+    /// <summary>
     /// Gets or sets the path of the desktop wallpaper.
     /// </summary>
     /// <remarks>
@@ -351,6 +359,16 @@ public partial class VirtualDesktop
 
         appUserModelId = "";
         return false;
+    }
+
+    /// <summary>
+    /// Gets the index of a desktop by its identifier.
+    /// </summary> 
+    /// <param name="desktopId">The identifier of the virtual desktop to get the index from.</param>
+    public static int GetIndexFromId(Guid desktopId)
+    {
+        var desktops = _provider.VirtualDesktopManagerInternal.GetDesktops().ToArray();
+        return Array.FindIndex(desktops, d => d.GetID() == desktopId);
     }
 
     #endregion
