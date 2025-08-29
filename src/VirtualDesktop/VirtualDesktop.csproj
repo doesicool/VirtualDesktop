@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>net8.0-windows10.0.19041.0;net7.0-windows10.0.19041.0;net6.0-windows10.0.19041.0</TargetFrameworks>
-	<PackageId>Slions.VirtualDesktop</PackageId>
+	<PackageId>Slions.VirtualDesktop.ForkTest</PackageId>
     <LangVersion>latest</LangVersion>
     <UseWPF>true</UseWPF>
     <ImplicitUsings>enable</ImplicitUsings>
@@ -24,6 +24,7 @@
     <RepositoryType>git</RepositoryType>
     <PackageReleaseNotes>$(PublishReleaseNotes)</PackageReleaseNotes>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-windows10.0.19041.0|AnyCPU'">
